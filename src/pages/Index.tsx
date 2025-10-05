@@ -6,7 +6,6 @@ import WorkShowcase from "@/components/WorkShowcase";
 import CaseStudy from "@/components/CaseStudy";
 import Testimonials from "@/components/Testimonials";
 import Clients from "@/components/Clients";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -22,7 +21,6 @@ const Index = () => {
         <CaseStudy />
         <Testimonials />
         <Clients />
-        <Footer />
       </div>
     </>
   );
