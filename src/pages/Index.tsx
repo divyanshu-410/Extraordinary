@@ -1,13 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from "react";
+import Loader from "@/components/Loader";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import WorkShowcase from "@/components/WorkShowcase";
+import Testimonials from "@/components/Testimonials";
+import Clients from "@/components/Clients";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      {loading && <Loader onComplete={() => setLoading(false)} />}
+      
+      <div className={`transition-opacity duration-500 ${loading ? "opacity-0" : "opacity-100"}`}>
+        <Hero />
+        <Features />
+        <WorkShowcase />
+        <Testimonials />
+        <Clients />
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
